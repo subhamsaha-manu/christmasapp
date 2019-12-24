@@ -1,1 +1,13 @@
-<p>login works!</p>
+<form [formGroup] = "loginForm">
+<div class="ui fluid icon input">
+    <input id ="firstName"
+           name="firstName"
+           formControlName="firstName"
+           type="text" 
+           placeholder="Enter your First Name">
+  </div>
+  
+    <button [disabled]="loginForm.invalid"(click)="onSubmit()" style="display: none;"></button>
+    
+
+</form>
