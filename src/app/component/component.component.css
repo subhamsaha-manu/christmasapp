@@ -1,5 +1,9 @@
-.image{
+.ui.card>.image{
+    height: 300px;
     width:100%;
+    background-color: blue;
+    background:url(../../assets/dp.png);
+    align-content: center;
 }
 
 .ui.card{
