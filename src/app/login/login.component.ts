@@ -13,6 +13,7 @@ import {Router} from "@angular/router";
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
+  wrongInput = false;
   constructor(private formBuilder: FormBuilder,
     private router: Router){}
 
@@ -30,8 +31,10 @@ export class LoginComponent implements OnInit {
     onSubmit(){
       console.log(this.loginForm.value.firstName);
       let value = this.loginForm.value.firstName;
-      if(value === 'Sneha')
-      this.router.navigate(['contentComponent']);
+      if(value.toLowerCase() === 'sneha')
+        this.router.navigate(['contentComponent']);
+      else
+        this.wrongInput = true;
     }
 
 }

@@ -1,13 +1,13 @@
 <form [formGroup] = "loginForm">
-<div class="ui fluid icon input">
+<div [className]="wrongInput? 'ui fluid icon input field error' : 'ui fluid icon input field info'">
     <input id ="firstName"
            name="firstName"
            formControlName="firstName"
            type="text" 
            placeholder="Enter your First Name">
   </div>
-  
+  <div class="ui error message" *ngIf="wrongInput==true">
+    <p>This is not your name</p>
+  </div>
     <button [disabled]="loginForm.invalid"(click)="onSubmit()" style="display: none;"></button>
-    
-
 </form>
